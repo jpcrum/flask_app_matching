@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Matching</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .container { display: flex; justify-content: center; align-items: center; }
+        .image, .fields { margin: 10px; }
+        img { max-width: 300px; max-height: 300px; }
+        .buttons { margin-top: 20px; }
+        button { padding: 10px 20px; margin: 5px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h1>Match Image with Fields</h1>
+    <div class="container">
+        <div class="image">
+            <img src="{{ image_url }}" alt="Image">
+        </div>
+        <div class="fields">
+            <h3>Fields</h3>
+            <ul>
+                <li><strong>Name:</strong> {{ name }}</li>
+                <li><strong>Account ID:</strong> {{ account_id }}</li>
+            </ul>
+        </div>
+    </div>
+    <div class="buttons">
+        <!-- Match and Doesn't Match buttons -->
+        <a href="/match/match"><button style="background-color: green; color: white;">Match</button></a>
+        <a href="/match/does_not_match"><button style="background-color: red; color: white;">Doesn't Match</button></a>
+    </div>
+    <p>Processed {{ current }} of {{ total }}</p>
+</body>
+</html>
